@@ -1,0 +1,25 @@
+Introduction:
+This document will be to explain the purpose of "Fair Ain't Square."
+Author: Owen Shapiro (EdgeCutter#6175 on Discord). You can reach me through Discord or at owenshapiro@gmail.com.
+
+Team:
+The main designer and concept creator is I, EdgeCutter#6175 while Chungas Singularity#4589 and PineappleFanYT#3269 are the lead programmers. Pineapple also helps with design.
+As the game is open source, there will be others who help create designs and concepts.
+
+Gameplay:
+The game will be an arena-deathmatch game on a flat plane (known as 2D). Each player will be a square, intending to die the least and kill the most. Other modes may proceed. 
+Guns/Devices: shotgun (slow firerate but widespread shots and high damage) scattergun (shotgun except more widespread bullets but less damage per bullet) assult rifle (tiny damage per bullet but great fire rate) minigun (assult rifle but more fire rate and less damage) pistol (medium fire rate and damage) flamethrower (barely any range but great fire rate and damage) sword (one hit kill)
+back shield (shields back) cloak (invisible for 10 seconds, 30 second recharge) jetpack (useable for five seconds, 15 second recharge) scope (adds a laser scope to the weapon) med pack (one use per life, heals full health) small med pack (two uses per life, heals half health) forcefield (invonourable for 5 seconds, 15 second recharge) ice gun (freezes opponents for 5 seconds, no damage) 
+There will be no critical hits, no reloading, no realism. Just fun.
+
+Technicality:
+The game will have a main menu containing the title and four buttons: Play, Editor, Character and Credits.
+Credits: Just the leads of the game (mentioned in team) and a note saying "and all our fabulous supporters!"
+Editor: There should be a color wheel, an option to draw or make rectangles, a spawn maker for each of the players, a hitbox button to make everything you draw a platform, a paint bucket tool and a save level button. The paper needs to be infinitely large.
+Play: Like the main menu, the play menu will have options for LAN, training (against AI), and Local. You will only be able to play levels you made in the alpha, meaning there will be a level select screen. This will change without a doubt. The ability for online play will also be added. 
+Character: In the character menu, you will have two options. You can play with 8 skill points and 1 weapon, or 5 skill points and two weapons. There are two stats to spend skill points on, being health and speed. Each need 5 skill points to max out. There will be a counter for skill points left. To avoid cheating, whenever someone changes their amount of skill points and weapons their points will go back to being unused.
+This game dosen't take much hardware and (if possible) should be able to be stored on a flash drive.
+The keyboard and mouse controls are simple: awsd is move, space is jump, mouse movement is aim gun, and shift is to switch weapon. These should be easily remapped in a pause menu of sorts.
+Controllers will use left joystick to move, right joystick to aim, any bumper to switch weapons, left trigger to jump and right trigger to use weapon. Again, remappable.
+
+The genre of this game will be Sidescrolling 2D Arena Shooter Platformer. 
