@@ -4,14 +4,21 @@
 #include <math.h>
 #include "text.hpp"
 #include "utilities.hpp"
+//#include "npc.hpp"
 
 int main(){
-  sf::RenderWindow window(sf::VideoMode(1366, 768), "Finneon", sf::Style::Default);
+  sf::RenderWindow window(sf::VideoMode(1366, 768), "Fair ain't square", sf::Style::Default);
   window.setFramerateLimit(60);
 
   //Make the font self-constructing in the future
   sf::Texture text;
-  text.loadFromFile("fontT.png");
+  text.loadFromFile("./fontT.png");
+
+  //Placeholder square, at least show something on screen
+  sf::RectangleShape square(sf::Vector2f(150.0, 150.0));
+  square.setSize(sf::Vector2f(100.0, 100.0));
+  square.setFillColor(sf::Color(25, 255, 25));
+  square.setPosition(sf::Vector2f(150.0, 150.0));
 
   while (window.isOpen()){
     sf::Event event;
@@ -32,10 +39,10 @@ int main(){
 		window.close();
       }
     }
+	window.clear();
 	writing myText("This is a test", 50, 50);
 	myText.show(window, text);
-
-    window.clear();
+	window.draw(square);
 
     window.display();
   }
