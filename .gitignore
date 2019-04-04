@@ -2,3 +2,7 @@
 *~
 *#*
 *.stackdump
+*.aux
+*.log
+*.pdf
+*.toc

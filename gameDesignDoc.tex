@@ -1,0 +1,147 @@
+\documentclass{article}
+\author{That Green Power Button}
+\title{Fair Ain't Square}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Scope}
+This document is intended to be read by programmers and artists involved in the design, implementation and testing of Fair Ain't Square.
+
+\section{Target System}
+Windows, Mac and Linux
+
+\section{Specification}
+\subsection{Concept}
+The aim of Fair Ain't Square is to produce a fun, addictive and fast multiplayer arena deathmatch game.
+
+\subsection{Game Structure}
+There will be different arenas, small stages, with different graphics and layout for each of them. Players can be killed by going out-of-bounds, other players, stage hazards and suicide. Players use a variety of guns to eleminate their adversery, either by killing them directly, or indirectly, by pushing them in stage hazards or out-of-bounds by explosions.
+
+\subsection{Players}
+The PC game will be playable by multiple players across a network or by one player at a standalone machine. Screen-splitting may be implemented. NPCs or computer players will be able to join an instanciated game as autonomus agents.
+
+\subsection{Action}
+There will be different arenas\footnote{See section \ref{Arena} on page \pageref{Arena}}, small stages, with different graphics\footnote{See section \ref{Graphics} on page \pageref{Graphics}} and layout for each of them. Players\footnote{See section \ref{Players} on page \pageref{Players}} can be killed by going out-of-bounds, other players, stage hazards\footnote{See section \ref{Hazards} on page \pageref{Hazards}} and suicide. Players use a variety of guns\footnote{See section \ref{Weapons} on page \pageref{Weapons}} to eleminate their adversery, either by killing them directly, or indirectly, by pushing them in stage hazards or out-of-bounds by explosions. In case the player tries to kill himself before being killed, the point will go to the last player who attributted damage to the suicidal player. Players spawn either on pre-set points, or randomly on top of the arena. This is a known setting of the map, meaning the two situations won't happen at once.\label{Spawn}
+
+\subsection{Objective}
+The objective of the game will vary depending on the game type. The player can choose to play one of 4 different games
+
+\subsubsection{Deathmatch}
+In this gamemode, players compete in a set amount of time to kill as many opponents before the time runs out. Killing an opponent awards the killer a point. At the end of the time limit, the game stops and show statistics about the players, namely who won the most points.
+
+\subsubsection{Team Deathmatch}
+This game mode is very similar to the Deathmatch gamemode. Players are part of teams, and must work together to eliminate the other team. Teams are colored differently to aid in discrimination. Players can't kill or damage their teammates, however, explosions still propel players regardless of any team. Points still go to killers, but the team's score is a summation of all the points of the team members. The end screen is similar to Deathmatch, but shows colored players as part of their team during the match.
+
+\subsubsection{Capture the Flag}
+This game mode's goal is to capture a flag\footnote{See section \ref{Flag} on page \pageref{Flag}}, usually placed in the middle of the arena. Two teams are opposing each other. A player stepping\footnote{See section \ref{Step} on page \pageref{Step}} on the flag will carry the flag until his death, or scoring, or throwing the flag. Scoring is not done by killing the enemy players, but rather by getting the flag in a special zone in the corner of the map, coloured the colour of one of the two teams.
+
+\subsubsection{2-CTF}
+This game mode is very similar to Capture the Flag, except that there is two flags in play. Each of the flags is placed in a specially dedicated zone of one of the teams. The goal of the game is to capture the enemy flag and return it to the player's team's zone. If a player grabs its own team flag, the flag is teleported to its original position. The original flag needs to be in its original position to score with the enemy flag.
+
+\subsection{Graphics}
+\label{Graphics}
+\subsubsection{Arena}
+The arena is made up of tiles. Same sized squares made up of a textured graphic and proprities, such as ice, low-friction, high elasticity, destructability, one-sided platforms and more. Some tiles will be animated, some tiles will be transparant. The tiles are 16x16 pixels, but this is subject to change. The screen will follow behind the active player. It will not follow the enemy players except in case of death of the active player. The screen will zoom in or out automatically depending on the speed of the active player. The screen will shake violently when explosions occur near the active player.
+
+\subsubsection{Players}
+Players are simple randomly or player-chosen coloured squares. In case of team match, the player's colour is an average of the player's original colour and the team's colour. Players do not rotate. Players may experience a shear transformation at very high speed.
+
+\subsubsection{Mini-map}
+The minimap is a reduced display of the entire map in stylized form, placed in one of the corners of the screen. The minimap is real-time.
+
+\subsubsection{Objects}
+Weapons and flags aren't tiles. Thus, weapons and flags aren't rectangular. Weapons and flags are the only objects capable of being rotated, usually when being used or thrown. The guns and flags rotate to follow the mouse of the player using them.
+
+\subsubsection{Text}
+Ingame text, such as instant communication, will be shown by a rectangular speech bubble above and following the talking player, colored the same colour as the player. In case the player is in a team based match, the bubble is an average of the player's original colour and the team's colour.
+
+\section{Gameplay}
+\subsection{Arenas}
+\label{Arena}
+Arenas can be small to very very large. There will be a number of clear landmarks to ease navigation. Arenas will consist of
+\begin{itemize}
+\item Grass
+\item Dirt
+\item Stone
+\item Glass
+\item Water
+  \label{Hazards}
+\item Spikes
+\item Lava
+\item Platforms
+\item Metal
+\item Metal crates
+\item Wooden Crates
+\item Elevators
+\end{itemize}
+
+\subsection{Weapons}
+\label{Weapons}
+\label{Step}
+\label{Flag}
+Weapons are the main way of killing enemies. Most weapons are projectile based. The player can have 3 weapons equipped at once. Weapons spawn either randomly on the map, or on dedicated spawn points. Killed players will lose their weapons, which will fall on the floor. Players can grab weapons by stepping on them. Players can't grab weapons if they already have 3 equipped weapons. A flag counts as a weapon, but doesn't do any damage. Weapons use ammunition. Players can't fire a weapon without ammunition. Ammunition can be found on players's corpses, while stepping over a weapon\footnote{Players will still gain ammunition even if they can't pick the weapon. The weapon that isn't picked up doesn't lose any ammo, it simply appear in the player's equipped weapon}, or find ammunition on the ground, by the same manner as weapons.
+\begin{itemize}
+\item Pistol
+\item Machine gun
+\item Ak-47
+\item Bazooka
+\item Mines
+\item Bow and Arrow
+\item Laser gun
+\item Water gun
+\item Blackhole generator
+\item Grenade
+\item Grappling hook
+\item Teleporter
+\end{itemize}
+
+\subsection{Control}
+\label{Players}
+The game will be controlled by mouse and keyboard. Keys are remappable. The mouse is used to aim and fire weapons.
+
+The player can rump, run, crouch, walk, and fire while moving. The player can throw weapons. The player can change equipped weapons with the mouse wheel or with keyboard keys. The player can kill himself with a key.
+
+\section{Front End}
+
+\subsection{Main menu}
+The game will use a simple menu system for selecting options. The setup will be similar to Supreme Commander. The background will cocsist of a live game played by bots, camera zoomed out and roughly following the action. In addition to the following items, the main menu will have a quit button, exiting the game.
+
+\subsection{Player Customization}
+This menu will allow the active player to manage his square's apparence, namely hia name and his colour. The player will also be able to view his stats, such as time player, his number of wins and defeats, his kills and death numbers, ect
+
+\subsection{Editor}
+This button will bring the player to the editor.
+
+\subsection{Settings}
+This menu will allow the player to remap keyboard keys and commands, change the screen ratio, ect.
+
+\subsection{Credits}
+This menu will list all the people who participed in the creation of the game, plus name the different technologies used in the game.
+
+\section{Editor}
+The editor is a simple program used by the player to make his own arenas. The arenas created will be saved in a special format. At the right of the editor will be the list of all tiles the game has to offer. The tiles can be selected. All tools will place the selected tile.
+
+\subsection{Tools}
+The editor will have tools helping the player in his level creation.
+
+\subsubsection{Drawing tool}
+The drawing tool will place one tile at at time in the arena.
+
+\subsubsection{Rectangle Tool}
+This tool will allow the player to select two corners by clicking and drawing, or clicking twice. The two corners selected will form a rectangle that will be filled with the selected tile.
+
+\subsubsection{Paint Bucket Tool}
+The paint bucket tool will fill an enclosed area with the selected tile.
+
+\subsubsection{Delete tool}
+This tool will deleted the tile under the player's cursor.
+
+\subsection{Misc}
+The player will be able to select weapons, players and flag spawn points.\footnote{See section \ref{Spawn} on page \pageref{Spawn}} The player will be able to choose to enable random weapons spawn or disable it. Weapons with dedicated spawn points aren't affected by this setting. If the arena has no spawn points, the players are randomly spawned on top of the arena.\footnote{See section \ref{Flag} on page \pageref{Flag}} If the arena has 0 flags, it can't be used as a Capture the Flag arena. If the arena has 1 flag, it can. If the arena has 2 flags, the arena can be used as a 2-CTF arena. This is automatic. The arena's dimensions are determined by a bounding-box of all the tiles on the arena.
+
+The player can also choose a background for the arena.
+
+\end{document}
