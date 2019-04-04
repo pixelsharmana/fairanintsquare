@@ -61,7 +61,7 @@ int main(){
     }
 
     //Pressing "C" will create a NPC, likewise, pressing "V" will delete one
-     if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
       npc bob(rand()%500, rand()%500);
       npcs.push_back(bob);
 	  npcs.back().setColour(rand()%255, rand()%255, rand()%255);
