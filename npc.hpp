@@ -11,6 +11,11 @@ private:
   int maxSpeed=6;
   unsigned int runningSpeed=6;
 public:
+
+  bool intersects(const tile& input){
+	return base.getGlobalBounds().intersects(input.base.getGlobalBounds());
+  }
+
   unsigned int getSpeed(){
     return speed;
   }
@@ -84,28 +89,21 @@ public:
 
   npc(){
     base.setSize(sf::Vector2f(16, 16));
-    //Origin to center to facilitate texture flipping
-    base.setOrigin(8, 8);
   }
 
   npc(int t_x, int t_y){
     base.setSize(sf::Vector2f(16, 16));
     base.move(sf::Vector2f(t_x, t_y));
-    //Origin to center to facilitate texture flipping
-    base.setOrigin(8, 8);
   }
 
   npc(int t_x, int t_y, std::string input){
     base.setSize(sf::Vector2f(16, 16));
     base.move(sf::Vector2f(t_x, t_y));
-    //Origin to center to facilitate texture flipping
-    base.setOrigin(8, 8);
     name=input;
   }
 
   npc(std::string input){
     base.setSize(sf::Vector2f(16, 16));
-    base.setOrigin(8, 8);
     name=input;
   }
 };

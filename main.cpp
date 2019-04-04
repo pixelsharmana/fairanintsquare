@@ -29,6 +29,7 @@ int main(){
   tileTest.setColour(155, 175, 180);
 
   while (window.isOpen()){
+	sf::Vector2f playerLastPos=myPlayer.getPosition();
     sf::Event event;
 
     //Bunch of keyboard events that'll make our character move around
@@ -104,6 +105,9 @@ int main(){
 
 	tileTest.show(window);
 	myPlayer.updateMovement();
+	if(myPlayer.intersects(tileTest)){
+	  myPlayer.setPosition(playerLastPos);
+	}
 	myPlayer.show(window);
 	writing myText("This is a test", 50, 50);
 	myText.show(window, text);
