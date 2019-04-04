@@ -56,23 +56,20 @@ public:
   }
 
   void updateMovement(){
-	sf::Vector2f temp=updateVelocity();
-	if(temp.x<-maxSpeed){
-	  temp.x=-maxSpeed;
+	if(getVelocity().x<-maxSpeed){
+	  setVelocity(-maxSpeed, 0);
 	}
-	else if(temp.x>maxSpeed){
-	  temp.x=maxSpeed;
+	else if(getVelocity().x>maxSpeed){
+	  setVelocity(maxSpeed, 0);
 	}
-	if(temp.y<-maxSpeed){
-	  temp.y=-maxSpeed;
+	if(getVelocity().y<-maxSpeed){
+	  setVelocity(0, -maxSpeed);
 	}
-	else if(temp.y>maxSpeed){
-	  temp.y=maxSpeed;
+	else if(getVelocity().y>maxSpeed){
+	  setVelocity(0, maxSpeed);
 	}
-	move(temp.x, temp.y);
-    // if(movement.x<-maxSpeed){
-    //   movement.x=-maxSpeed;
-    // }
+	move(getVelocity().x, getVelocity().y);
+	updateVelocity();
   }
 
   //Scaling is only ever used to flip the texture

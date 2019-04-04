@@ -25,6 +25,9 @@ int main(){
   player myPlayer(100, 100);
   myPlayer.setColour(0, 255, 0);
 
+  tile tileTest(50, 150);
+  tileTest.setColour(155, 175, 180);
+
   while (window.isOpen()){
     sf::Event event;
 
@@ -99,6 +102,7 @@ int main(){
       it.show(window);
     }
 
+	tileTest.show(window);
 	myPlayer.updateMovement();
 	myPlayer.show(window);
 	writing myText("This is a test", 50, 50);
